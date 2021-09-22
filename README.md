@@ -100,3 +100,25 @@ const name = `Capt. Janeway`;
 // хорошо
 const name = 'Capt. Janeway';
 ```
+- При создании строки программным путём используйте шаблонные строки вместо конкатенации. 
+``` js
+// плохо
+function sayHi(name) {
+  return 'How are you, ' + name + '?';
+}
+
+// плохо
+function sayHi(name) {
+  return ['How are you, ', name, '?'].join();
+}
+
+// плохо
+function sayHi(name) {
+  return `How are you, ${ name }?`;
+}
+
+// хорошо
+function sayHi(name) {
+  return `How are you, ${name}?`;
+}
+```
