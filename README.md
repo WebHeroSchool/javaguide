@@ -223,3 +223,26 @@ class Foo {
   bar() { return 2; }
 }
 ```
+## 9. Модули
+- Всегда используйте модули (import/export) вместо нестандартных модульных систем. Вы всегда сможете транспилировать код в вашу любимую модульную систему.
+``` js
+// плохо
+const AirbnbStyleGuide = require('./AirbnbStyleGuide');
+module.exports = AirbnbStyleGuide.es6;
+
+// хорошо
+import AirbnbStyleGuide from './AirbnbStyleGuide';
+export default AirbnbStyleGuide.es6;
+
+// отлично
+import { es6 } from './AirbnbStyleGuide';
+export default es6;
+```
+-  Не используйте импорт через *.
+``` js
+// плохо
+import * as AirbnbStyleGuide from './AirbnbStyleGuide';
+
+// хорошо
+import AirbnbStyleGuide from './AirbnbStyleGuide';
+```
