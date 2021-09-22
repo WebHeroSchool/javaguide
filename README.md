@@ -148,3 +148,18 @@ const foo = function uniqueMoreDescriptiveLexicalFoo() {
   console.log('Welcome to the Internet. Please follow me.');
 }());
 ```
+## 7. Стрелочные функции
+-   Когда вам необходимо использовать анонимную функцию (например, при передаче встроенной функции обратного вызова), используйте стрелочную функцию/
+``` js
+// плохо
+[1, 2, 3].map(function (x) {
+  const y = x + 1;
+  return x * y;
+});
+
+// хорошо
+[1, 2, 3].map((x) => {
+  const y = x + 1;
+  return x * y;
+});
+```
