@@ -33,3 +33,11 @@ const item = new Object();
 // хорошо
 const item = {};
 ```
+- Не вызывайте напрямую методы Object.prototype, такие как hasOwnProperty, propertyIsEnumerable, и isPrototypeOf.
+``` js
+// плохо
+console.log(object.hasOwnProperty(key));
+
+// хорошо
+console.log(Object.prototype.hasOwnProperty.call(object, key));
+```
