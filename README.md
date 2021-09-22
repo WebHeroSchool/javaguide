@@ -163,3 +163,20 @@ const foo = function uniqueMoreDescriptiveLexicalFoo() {
   return x * y;
 });
 ```
+- Если выражение располагается на нескольких строках, то необходимо обернуть его в скобки для лучшей читаемости.
+``` js
+// плохо
+['get', 'post', 'put'].map((httpMethod) => Object.prototype.hasOwnProperty.call(
+    httpMagicObjectWithAVeryLongName,
+    httpMethod,
+  )
+);
+
+// хорошо
+['get', 'post', 'put'].map((httpMethod) => (
+  Object.prototype.hasOwnProperty.call(
+    httpMagicObjectWithAVeryLongName,
+    httpMethod,
+  )
+));
+```
