@@ -180,3 +180,28 @@ const foo = function uniqueMoreDescriptiveLexicalFoo() {
   )
 ));
 ```
+## 8. Классы и конструкторы
+- Всегда используйте class. Избегайте прямых манипуляций с prototype.
+``` js
+// плохо
+function Queue(contents = []) {
+  this.queue = [...contents];
+}
+Queue.prototype.pop = function () {
+  const value = this.queue[0];
+  this.queue.splice(0, 1);
+  return value;
+};
+
+// хорошо
+class Queue {
+  constructor(contents = []) {
+    this.queue = [...contents];
+  }
+  pop() {
+    const value = this.queue[0];
+    this.queue.splice(0, 1);
+    return value;
+  }
+}
+```
