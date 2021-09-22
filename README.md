@@ -41,3 +41,22 @@ console.log(object.hasOwnProperty(key));
 // хорошо
 console.log(Object.prototype.hasOwnProperty.call(object, key));
 ```
+## 3. Массивы
+- Для создания массива используйте литеральную нотацию.
+``` js
+// плохо
+const items = new Array();
+
+// хорошо
+const items = [];
+```
+- Для добавления элемента в массив используйте #push вместо прямого присваивания.
+``` js
+const someStack = [];
+
+// плохо
+someStack[someStack.length] = 'abracadabra';
+
+// хорошо
+someStack.push('abracadabra');
+```
