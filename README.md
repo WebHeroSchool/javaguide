@@ -246,22 +246,30 @@ import * as AirbnbStyleGuide from './AirbnbStyleGuide';
 // хорошо
 import AirbnbStyleGuide from './AirbnbStyleGuide';
 ```
-## 10. Итераторы и генераторы
-- Не используйте итераторы. Применяйте функции высшего порядка вместо таких циклов как for-in или for-of.
+## 10. Свойства
+- Используйте точечную нотацию для доступа к свойствам.
 ``` js
-onst numbers = [1, 2, 3, 4, 5];
+const luke = {
+  jedi: true,
+  age: 28,
+};
 
 // плохо
-let sum = 0;
-for (let num of numbers) {
-  sum += num;
-}
-sum === 15;
+const isJedi = luke['jedi'];
 
 // хорошо
-let sum = 0;
-numbers.forEach((num) => {
-  sum += num;
-});
-sum === 15;
+const isJedi = luke.jedi;
+```
+- Используйте скобочную нотацию [], когда название свойства хранится в переменной.
+``` js
+const luke = {
+  jedi: true,
+  age: 28,
+};
+
+function getProp(prop) {
+  return luke[prop];
+}
+
+const isJedi = getProp('jedi');
 ```
