@@ -205,3 +205,21 @@ class Queue {
   }
 }
 ```
+- Избегайте дублирующих членов класса.
+``` js
+// плохо
+class Foo {
+  bar() { return 1; }
+  bar() { return 2; }
+}
+
+// хорошо
+class Foo {
+  bar() { return 1; }
+}
+
+// хорошо
+class Foo {
+  bar() { return 2; }
+}
+```
