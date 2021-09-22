@@ -246,3 +246,22 @@ import * as AirbnbStyleGuide from './AirbnbStyleGuide';
 // хорошо
 import AirbnbStyleGuide from './AirbnbStyleGuide';
 ```
+## 10. Итераторы и генераторы
+- Не используйте итераторы. Применяйте функции высшего порядка вместо таких циклов как for-in или for-of.
+``` js
+onst numbers = [1, 2, 3, 4, 5];
+
+// плохо
+let sum = 0;
+for (let num of numbers) {
+  sum += num;
+}
+sum === 15;
+
+// хорошо
+let sum = 0;
+numbers.forEach((num) => {
+  sum += num;
+});
+sum === 15;
+```
