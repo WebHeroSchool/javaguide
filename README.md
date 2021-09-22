@@ -77,3 +77,14 @@ function getFullName(user) {
   return `${firstName} ${lastName}`;
 }
 ```
+- Используйте деструктуризацию массивов.
+``` js
+const arr = [1, 2, 3, 4];
+
+// плохо
+const first = arr[0];
+const second = arr[1];
+
+// хорошо
+const [first, second] = arr;
+```
