@@ -122,3 +122,29 @@ function sayHi(name) {
   return `How are you, ${name}?`;
 }
 ```
+## 6. Функции
+- Используйте функциональные выражения вместо объявлений функций.
+``` js
+// плохо
+function foo() {
+  // ...
+}
+
+// плохо
+const foo = function () {
+  // ...
+};
+
+// хорошо
+// лексическое имя, отличное от вызываемой(-ых) переменной(-ых)
+const foo = function uniqueMoreDescriptiveLexicalFoo() {
+  // ...
+};
+```
+-  Оборачивайте в скобки немедленно вызываемые функции.
+``` js
+// Немедленно вызываемая функция
+(function () {
+  console.log('Welcome to the Internet. Please follow me.');
+}());
+```
