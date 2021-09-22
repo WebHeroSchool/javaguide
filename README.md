@@ -88,3 +88,15 @@ const second = arr[1];
 // хорошо
 const [first, second] = arr;
 ```
+## 5. Строки
+- Используйте одинарные кавычки '' для строк. 
+``` js
+// плохо
+const name = "Capt. Janeway";
+
+// плохо 
+const name = `Capt. Janeway`;
+
+// хорошо
+const name = 'Capt. Janeway';
+```
