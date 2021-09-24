@@ -84,3 +84,20 @@ var someItem = 'some string'
    return 'something';
  }
   ```
+## 6. Не используйте New Object()
+- Используйте {} вместо new Object();
+- Используйте '' вместо new String();
+- Используйте 0 вместо new Number();
+- Используйте false вместо new Boolean();
+- Используйте [] вместо new Array();
+- Используйте /()/ вместо new RegExp();
+- Используйте function (){} вместо new Function();
+``` js
+let x1 = "";             // new primitive string
+let x2 = 0;              // new primitive number
+let x3 = false;          // new primitive boolean
+const x4 = {};           // new object
+const x5 = [];           // new array object
+const x6 = /()/;         // new regexp object
+const x7 = function(){}; // new function object
+```
