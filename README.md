@@ -33,3 +33,19 @@ typeof foo === 'undefined'
 true === true
 foo === null
 ```
+## 3. Объявляйте переменные снаружи от цикла For
+При выполнении длинных циклов «for» не создавайте дополнительной нагрузки на движок. 
+``` js
+// плохо
+for(var i = 0; i < someArray.length; i++) {
+    var container = document.getElementById('container');
+    container.innerHtml += 'my number: ' + i;
+    console.log(i);
+ }
+ // хорошо
+ var container = document.getElementById('container');
+ for(var i = 0, len = someArray.length; i < len;  i++) {
+    container.innerHtml += 'my number: ' + i;
+    console.log(i);
+ }
+ ```
