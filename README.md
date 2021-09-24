@@ -111,3 +111,14 @@ const x7 = function(){}; // new function object
     };
  })();
  ```
+## 8. Не передавайте строку в "SetInterval" или "SetTimeOut"
+- Данный код не только неэффективен, но и ведет себя таким же образом, как и вела бы себя функция "eval". Никогда не передавайте строку в "SetInterval" или "SetTimeOut". Вместо этого передавайте имя функции.
+``` js
+// плохо
+setInterval(
+ "document.getElementById('container').innerHTML += 'My new number: ' + i", 3000
+ );
+ 
+ // хорошо
+ setInterval(someFunction, 3000);
+  ```
