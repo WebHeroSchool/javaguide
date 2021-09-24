@@ -69,3 +69,18 @@ discount = 0.10;
 
 fullPrice = price - discount;
  ```
+## 5. Всегда используйте точки с запятой (;)
+- Это очень плохая практика, в результате использования которой потенциально могут возникнуть гораздо более крупные и тяжелые для обнаружения проблемы.
+``` js
+// плохо
+var someItem = 'some string'
+ function doSomething() {
+   return 'something'
+ }
+ 
+ // хорошо
+ var someItem = 'some string';
+ function doSomething() {
+   return 'something';
+ }
+  ```
